@@ -12,8 +12,9 @@ from sklearn.metrics import accuracy_score, precision_recall_fscore_support
 from database import SessionLocal
 from models.sql_models import Event, ModelMetric
 from utils.feature_engineer import events_to_features_df, extract_features_dict
+from utils.data_loader import load_historical_events_from_csv
 
-MODEL_DIR = r"d:\Daksh\TrafficPredictor\Backend\models"
+MODEL_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(MODEL_DIR, "classifier.pkl")
 
 # Global cache
@@ -36,15 +37,26 @@ def load_classifier():
 
 def train_classifier():
     """
-    Trains the Random Forest classifier on historical events in SQLite.
+    Trains the Random Forest classifier on historical events from local CSV and custom events in SQLite/Neon.
     Saves the metrics in the database and dumps the model to models/classifier.pkl.
     """
-    print("Querying training data from SQLite database...")
+    print("Loading training data...")
+    try:
+        historical_events = load_historical_events_from_csv()
+    except Exception as e:
+        print(f"Error loading historical events from CSV: {e}")
+        historical_events = []
+
     db = SessionLocal()
     try:
-        events = db.query(Event).filter(Event.actual_impact.isnot(None)).all()
+        db_events = db.query(Event).filter(Event.actual_impact.isnot(None)).all()
+        print(f"Loaded {len(db_events)} operational events from database.")
+        
+        # Combine historical CSV events and database operational events
+        events = historical_events + db_events
+        
         if not events or len(events) < 50:
-            print(f"Insufficient training data in database ({len(events)} events found). Seeding dummy classifier...")
+            print(f"Insufficient training data ({len(events)} events found). Seeding dummy classifier...")
             seed_dummy_classifier()
             return True
             
@@ -52,7 +64,7 @@ def train_classifier():
         
         # 1. Feature Engineering
         df = events_to_features_df(events)
-        df["target"] = [ev.actual_impact for ev in events]
+        df["target"] = [ev.get("actual_impact") if isinstance(ev, dict) else ev.actual_impact for ev in events]
         
         # Drop rows with null target or null coordinates
         df = df.dropna(subset=["target"])

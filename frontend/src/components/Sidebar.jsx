@@ -16,7 +16,7 @@ export default function Sidebar() {
     <aside className="sidebar">
       <div className="sidebar-brand">
         <span className="brand-logo">🚦</span>
-        <h1 className="brand-name">TrafficCoPilot</h1>
+        <h1 className="brand-name">TrafficSense</h1>
       </div>
       
       <nav className="sidebar-nav">

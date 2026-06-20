@@ -73,8 +73,8 @@ def get_learning_dashboard_metrics(db: Session):
     """
     Aggregates learning metrics, historical accuracy trend, and lessons learned.
     """
-    # Get lessons (filtered to COPILOT- events)
-    lessons_list = db.query(Lesson).filter(Lesson.event_id.like("COPILOT-%")).order_by(Lesson.created_at.desc()).limit(10).all()
+    # Get lessons
+    lessons_list = db.query(Lesson).order_by(Lesson.created_at.desc()).limit(10).all()
     lessons_data = []
     for l in lessons_list:
         lessons_data.append({
