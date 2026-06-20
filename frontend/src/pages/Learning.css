@@ -1,0 +1,216 @@
+.learning-container {
+  padding-bottom: 24px;
+}
+
+.chart-card {
+  margin-bottom: 28px;
+}
+
+.chart-header {
+  margin-bottom: 20px;
+}
+
+.current-accuracy-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.accuracy-label {
+  font-size: 0.725rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.accuracy-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2563eb;
+}
+
+.recharts-container {
+  padding: 10px 0;
+}
+
+/* Lessons Cards */
+.lessons-section {
+  margin-bottom: 28px;
+}
+
+.lessons-grid {
+  margin-top: 14px;
+}
+
+.lesson-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.lesson-card-header {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.lesson-date {
+  font-weight: 500;
+}
+
+.status-text {
+  font-weight: 600;
+}
+
+.text-success { color: #10b981; }
+.text-warning { color: #f59e0b; }
+
+.lesson-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.lesson-desc {
+  font-size: 0.825rem;
+  color: #475569;
+  line-height: 1.4;
+  flex: 1;
+}
+
+/* Accordion Autopsies */
+.autopsy-section {
+  padding: 24px;
+}
+
+.accordion-list {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.accordion-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  background-color: #ffffff;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+  background-color: #f8fafc;
+}
+
+.accordion-header.active {
+  background-color: #f1f5f9;
+  border-bottom: 1px solid var(--border);
+}
+
+.accordion-event-id {
+  font-family: monospace;
+  font-weight: 700;
+  color: #2563eb;
+  font-size: 0.9rem;
+}
+
+.accordion-event-cause {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.85rem;
+}
+
+.accordion-event-loc {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.accordion-event-date {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.accordion-body {
+  background-color: #ffffff;
+  padding: 24px;
+}
+
+.autopsy-report-grid {
+  align-items: stretch;
+}
+
+.autopsy-metric-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.autopsy-metric-card h5, .autopsy-full-row h5 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.autopsy-row {
+  font-size: 0.85rem;
+  padding: 8px 0;
+  color: #475569;
+}
+
+.border-top {
+  border-top: 1px dashed #cbd5e1;
+  margin-top: 8px;
+  padding-top: 12px;
+}
+
+.autopsy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.autopsy-table th {
+  font-weight: 600;
+  color: #64748b;
+  text-align: left;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.autopsy-table td {
+  padding: 8px 0;
+  color: #475569;
+}
+
+.autopsy-full-row {
+  grid-column: 1 / -1;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.action-card {
+  border-left: 4px solid #10b981;
+}
+
+.alert-success-box {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #047857;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  justify-content: flex-start;
+}

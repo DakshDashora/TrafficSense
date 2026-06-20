@@ -1,0 +1,126 @@
+.chart-container {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  width: 100%;
+}
+
+.chart-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-left: 3px solid var(--accent);
+  padding-left: 8px;
+}
+
+.svg-chart {
+  display: block;
+  width: 100%;
+}
+
+.chart-label-text {
+  fill: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.chart-value-text {
+  fill: var(--accent);
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.chart-grid-text {
+  fill: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.chart-bar-value-text {
+  fill: var(--text);
+  font-size: 9px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.chart-group:hover .chart-bar-value-text {
+  opacity: 1;
+}
+
+.chart-bar {
+  transition: width 0.8s ease-in-out;
+}
+
+.chart-bar-vertical {
+  transition: height 0.8s ease-in-out, y 0.8s ease-in-out;
+}
+
+.chart-bar:hover, .chart-bar-vertical:hover {
+  filter: brightness(0.9);
+  cursor: pointer;
+}
+
+/* Donut specific layout */
+.donut-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.svg-donut {
+  transform: rotate(0deg);
+  transition: transform 0.5s ease;
+}
+
+.donut-center-text {
+  fill: var(--text);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.donut-sub-text {
+  fill: var(--muted);
+  font-size: 7px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+.legend-label {
+  color: var(--muted);
+  margin-right: 12px;
+  min-width: 140px;
+}
+
+.legend-val {
+  font-weight: bold;
+  color: var(--text);
+}

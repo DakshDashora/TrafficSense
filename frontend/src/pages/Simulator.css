@@ -1,0 +1,144 @@
+.simulator-container {
+  padding-bottom: 24px;
+}
+
+.scenario-cards-row {
+  margin-bottom: 28px;
+}
+
+.scenario-card {
+  cursor: pointer;
+  border-width: 2px;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 24px;
+}
+
+.scenario-card:hover {
+  transform: translateY(-4px);
+}
+
+.scenario-card.active {
+  border-color: #2563eb;
+  background-color: rgba(37, 99, 235, 0.01);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+}
+
+.scenario-card-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.plan-title-text {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.scenario-card.active .plan-title-text {
+  color: #2563eb;
+}
+
+.check-icon {
+  color: #2563eb;
+  background-color: rgba(37, 99, 235, 0.1);
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.scenario-metrics-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scen-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.scen-lbl {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.scen-val {
+  color: #334155;
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.duration-badge {
+  background-color: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.scen-divider {
+  height: 1px;
+  background-color: var(--border);
+  margin: 8px 0;
+}
+
+/* Comparison Table card */
+.comparison-table-card {
+  margin-bottom: 28px;
+}
+
+.comparison-table th {
+  width: 25%;
+}
+
+.comparison-table td {
+  font-size: 0.85rem;
+  padding: 14px 16px;
+}
+
+.highlight-cell {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+  color: #047857;
+  font-weight: 600;
+  border-left: 2px solid #10b981;
+}
+
+/* Selected Summary Panel */
+.simulator-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-left: 4px solid #2563eb;
+  padding: 20px;
+}
+
+.selected-summary-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.selected-plan-badge {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-bottom: 6px;
+}
+
+.selected-plan-desc {
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+.confirm-deploy-btn {
+  padding: 14px 28px;
+  font-size: 0.95rem;
+}
