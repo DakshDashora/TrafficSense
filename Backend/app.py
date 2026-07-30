@@ -106,6 +106,14 @@ class ResolveEventRequest(BaseModel):
 
 # ----------------- API ENDPOINTS -----------------
 
+@app.get("/api/health")
+def health_check():
+    """
+    GET /api/health
+    Lightweight health check endpoint for monitoring and keeping Render service awake.
+    """
+    return {"status": "ok"}
+
 @app.post("/api/predict")
 def predict_endpoint(req: PredictRequest, db: Session = Depends(get_db)):
     """
